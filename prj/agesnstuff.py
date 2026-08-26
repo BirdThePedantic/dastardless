@@ -100,7 +100,19 @@ def dpi(n, b, f, h, a, m, s):
 
 dpi(name, by, fvfd, fvhb, adrs, favorite_movie, sibling_number)
 
+complid = False
+while not complid:
+    try:
+        future_year = int(input("enter year over 2026:\n"))
+        if future_year < 2027:
+            print("i said a FUTURE YEAR")
+            continue
+        complid = True
+    except ValueError:
+        print("bruh")
+
 print("time for this program to end")
 print("go do something productive now")
 
 # how many criterions did i fulfill?
+# also just do 365.2422 instead of jumping through hoops for leap years
