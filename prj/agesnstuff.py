@@ -1,3 +1,8 @@
+# name: sanjay tirumalai
+# period: not applicable (PM?)
+# personal profile & age calculator
+# heh
+
 import time
 import sys
 # here's subtraction
