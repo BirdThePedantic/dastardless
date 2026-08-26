@@ -110,6 +110,7 @@ while not complid:
         complid = True
     except ValueError:
         print("bruh")
+print(f"you will be {future_year - by} in {future_year}\n")
 
 print("time for this program to end")
 print("go do something productive now")
