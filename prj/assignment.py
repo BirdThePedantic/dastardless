@@ -30,6 +30,8 @@
 #
 # This is my first comment
 
+# This is my first comment
+
 
 
 # TASK 2:
@@ -38,6 +40,8 @@
 # Python Skills Check
 #
 # Make sure Python treats the words as text.
+
+print("Python Skills Check")
 
 
 
@@ -53,6 +57,9 @@
 # IMPORTANT:
 # The first two should be text.
 # The third should be a number.
+print("Your first name")
+print("Your favorite food")
+print("A number between 1 and 100")
 
 
 
@@ -67,6 +74,7 @@
 #
 # Store YOUR name inside the variable.
 
+student_name = "Sanjay \"King of Autism\" Tirumalai"
 
 
 # TASK 5:
@@ -78,6 +86,7 @@
 #
 # Do NOT put quotation marks around the value.
 
+student_age = 16
 
 
 # TASK 6:
@@ -91,6 +100,8 @@
 #
 # Think about what type of data this is.
 
+account_balance = 125.75
+
 
 
 # TASK 7:
@@ -102,6 +113,8 @@
 #
 # Be careful with capitalization and quotation marks.
 
+is_learning_python = True
+
 
 
 # TASK 8:
@@ -112,6 +125,13 @@
 # IMPORTANT:
 # Print the VALUES stored in the variables,
 # not the names of the variables.
+
+print(f"""
+{student_name}
+{student_age}
+{account_balance}
+{is_learning_python}
+""")
 
 
 
@@ -136,6 +156,12 @@
 #
 # You choose the values.
 
+whole_number = 1
+decimal_number = 1.1
+message = "1"
+answer = True
+
+
 
 
 # TASK 10:
@@ -153,6 +179,8 @@
 # Is tricky_number storing a number that Python can currently
 # perform arithmetic with, or is it storing a String?
 
+tricky_number = "500"
+
 
 
 # TASK 11:
@@ -168,6 +196,9 @@
 #
 # The output may look similar, but the two variables
 # should NOT contain the same data type.
+print(tricky_number)
+actual_number = 500
+print(actual_number)
 
 
 
@@ -192,8 +223,9 @@
 # total = 62
 #
 # Python must perform the calculation.
-
-
+number_one = 45
+number_two = 17
+total = number_one + number_two
 
 # TASK 13:
 # Using the SAME number_one and number_two variables,
@@ -203,6 +235,7 @@
 #
 # Store the result of subtracting number_two
 # from number_one.
+difference = number_one - number_two
 
 
 
@@ -213,6 +246,8 @@
 #
 # Store the result of multiplying the two numbers.
 
+product = number_one * number_two
+
 
 
 # TASK 15:
@@ -221,6 +256,8 @@
 # quotient
 #
 # Store the result of dividing number_one by number_two.
+
+quotient = number_one / number_two
 
 
 
@@ -233,6 +270,10 @@
 # quotient
 #
 # Use four separate print statements.
+print(total)
+print(difference)
+print(product)
+print(quotient)
 
 
 
@@ -255,6 +296,10 @@
 #
 # Do NOT manually type the answer.
 
+price = 14
+quantity = 7
+purchase_total = price * quantity
+
 
 
 # TASK 18:
@@ -270,6 +315,10 @@
 # Imagine the money is divided equally between everyone.
 #
 # Determine the correct calculation yourself.
+# ???
+money = 500
+people = 8
+money_per_person = money/people
 
 
 
@@ -287,7 +336,9 @@
 #
 # Use the variables in your calculation.
 
-
+starting_balance = 850
+amount_spent = 237
+remaining_balance = starting_balance - amount_spent
 
 # TASK 20:
 # Create:
@@ -302,6 +353,10 @@
 # Calculate the total number of items.
 #
 # Do NOT manually calculate the answer.
+
+boxes = 12
+items_per_box = 24
+total_items = items_per_box * boxes
 
 
 
@@ -321,6 +376,10 @@
 #
 # Calculate one day's pay.
 
+hourly_pay = 20
+hours_worked = 8
+daily_pay = hourly_pay * hours_worked
+
 
 
 # TASK 22:
@@ -334,6 +393,8 @@
 # You MUST use daily_pay in your calculation.
 #
 # Do NOT redo the calculation from Task 21.
+
+weekly_pay = daily_pay * 5
 
 
 
@@ -349,6 +410,7 @@
 # Use weekly_pay.
 #
 # Do NOT use hourly_pay or hours_worked in this calculation.
+monthly_pay = weekly_pay * 4
 
 
 
@@ -366,6 +428,8 @@
 #
 # and one number.
 
+yearly_pay = monthly_pay * 12
+
 
 
 # ============================================================
@@ -379,6 +443,8 @@
 # last_name
 #
 # Store your first and last name as Strings.
+first_name = "Sanjay"
+last_name = "Tirumalai"
 
 
 
@@ -395,12 +461,13 @@
 # Use the two variables.
 #
 # Do NOT manually type your full name again.
+full_name = first_name + " " + last_name
 
 
 
 # TASK 27:
 # Print full_name.
-
+print(full_name)
 
 
 # TASK 28:
@@ -419,6 +486,7 @@
 #
 # You may NOT manually type "Python Programming"
 # into course_name.
+word_one = "Python"; word_two = "Programming"
 
 
 
@@ -435,6 +503,7 @@
 #
 # Store their answer inside user_name.
 
+user_name = input("enter name: ")
 
 
 # TASK 30:
@@ -447,6 +516,8 @@
 #
 # The program must work no matter what name is entered.
 
+print(f"Hello {user_name}")
+
 
 
 # TASK 31:
@@ -455,6 +526,7 @@
 # favorite_food
 #
 # Ask the user for their favorite food.
+favorite_food = input("favorite food: ")
 
 
 
@@ -471,7 +543,7 @@
 # Alex likes pizza.
 #
 # Do NOT manually type the user's answers.
-
+print(f"{user_name}'s favorite food is {favorite_food}")
 
 
 # ============================================================
@@ -493,6 +565,8 @@
 # Remember that input() gives you a String.
 # Figure out what conversion is needed.
 
+user_age = int(input("enter age: "))
+
 
 
 # TASK 34:
@@ -506,6 +580,8 @@
 # Use user_age.
 #
 # Do NOT ask for their age again.
+age_next_year = 1 + user_age
+
 
 
 
@@ -517,6 +593,7 @@
 # Calculate how old the SAME user will be 10 years from now.
 #
 # Do NOT ask another question.
+age_in_ten_years = user_age + 10
 
 
 
@@ -532,6 +609,7 @@
 # first_user_number
 #
 # Make sure Python can perform arithmetic with it.
+first_user_number = int(input("enter whole number: "))
 
 
 
@@ -541,6 +619,7 @@
 # Store it inside:
 #
 # second_user_number
+second_user_number = int(input("enter another whole number: "))
 
 
 
@@ -554,6 +633,9 @@
 #
 # Each variable should contain the result of a
 # DIFFERENT arithmetic operation.
+user_sum = first_user_number + second_user_number
+user_difference = first_user_number - second_user_number; user_product = first_user_number * second_user_number
+user_quotient = first_user_number / second_user_number
 
 
 
@@ -562,6 +644,12 @@
 #
 # Your program must work with different numbers entered
 # by different users.
+print(f"""
+{user_sum}
+{user_difference}
+{user_product}
+{user_quotient}
+""")
 
 
 
@@ -575,6 +663,7 @@
 # Store the answer in:
 #
 # work_hours
+work_hours = int(input("enter hours you work in a day: "))
 
 
 
@@ -588,6 +677,8 @@
 # THINK:
 # A pay rate could contain cents.
 
+hourly_rate = float(input("enter how much you make per hour: "))
+
 
 
 # TASK 42:
@@ -596,6 +687,7 @@
 # one_day_pay
 #
 # Calculate how much the person earns in one day.
+one_day_pay = hourly_rate * work_hours
 
 
 
@@ -611,6 +703,7 @@
 # Use one_day_pay.
 #
 # Do NOT repeat your previous calculation.
+five_day_pay = one_day_pay * 5
 
 
 
@@ -625,6 +718,7 @@
 #
 # You will need to decide whether another variable
 # is necessary before you can perform the calculation.
+money_after_spending = five_day_pay - float(input("enter amount of money from working spent: "))
 
 
 
@@ -645,7 +739,9 @@
 # You know the TOTAL and the NUMBER OF ITEMS.
 #
 # Determine the price of ONE item.
-
+total_cost = 360
+number_of_items = 12
+cost_per_item = total_cost/number_of_items
 
 
 # TASK 46:
@@ -660,6 +756,9 @@
 #
 # Determine how many miles were traveled during
 # each hour.
+total_distance = 450
+hours = 6
+distance_per_hour = total_distance/hours
 
 
 
@@ -674,6 +773,9 @@
 # students_per_classroom
 #
 # Assume students are divided equally.
+total_students = 120
+classrooms = 5
+students_per_classroom = total_students/classrooms
 
 
 
@@ -692,7 +794,9 @@
 # subtotal
 #
 # Calculate the subtotal.
-
+item_price = 18
+number_purchased = 5
+subtotal = item_price*number_purchased
 
 
 # TASK 49:
@@ -706,6 +810,8 @@
 #
 # REQUIREMENT:
 # Use subtotal and shipping_cost.
+shipping_cost = 12
+total_with_shipping = shipping_cost + subtotal
 
 
 
@@ -724,6 +830,8 @@
 # Use total_with_shipping.
 #
 # Do NOT redo either of the previous calculations.
+amount_paid = 150
+change_received = amount_paid - total_with_shipping
 
 
 
@@ -743,6 +851,8 @@
 # birth_year
 #
 # Make sure you can perform arithmetic with it.
+current_year = 2026
+birth_year = int(input("enter birth year: "))
 
 
 
@@ -752,7 +862,7 @@
 # approximate_age
 #
 # Calculate the user's approximate age.
-
+approximate_age = current_year - birth_year
 
 
 # TASK 53:
@@ -763,6 +873,7 @@
 # Convert approximate_age into a String.
 #
 # Do NOT manually type their age as text.
+age_as_string = str(approximate_age)
 
 
 
@@ -782,6 +893,7 @@
 # - Do NOT manually type the calculated age.
 #
 # Think carefully about the data types involved.
+age_message = "you are approximately " + str(approximate_age) + " years old."
 
 
 
@@ -803,6 +915,13 @@
 # combined_total
 #
 # Add all three numbers together.
+numberedstring = input("enter 3 numbers separated by spaces: ")
+numbers = numberedstring.split()
+number1 = int(numbers[0])
+number2 = int(numbers[1])
+number3 = int(numbers[2])
+print(f"{number1} {number2} {number3}")
+combined_total = number1+number2+number3
 
 
 
@@ -817,6 +936,8 @@
 # Use combined_total in your calculation.
 #
 # Do NOT add number1, number2, and number3 together again.
+average = combined_total/3
+
 
 
 
@@ -829,6 +950,7 @@
 #
 # REQUIREMENT:
 # Use average.
+doubled_average = average*2
 
 
 
@@ -845,6 +967,7 @@
 # number1
 #
 # in this calculation.
+final_answer = doubled_average - number1
 
 
 
@@ -857,7 +980,7 @@
 #
 # Fix the line below so score stores the correct DATA TYPE.
 
-score = "95"
+score = 95
 
 
 
@@ -870,7 +993,7 @@ score = "95"
 #
 # Do not replace the user's input with a number.
 
-# user_number = input("Enter a number: ")
+# user_number = int(input("Enter a number: "))
 # answer = user_number + 10
 # print(answer)
 
@@ -885,7 +1008,7 @@ score = "95"
 
 # first = "10"
 # second = 5
-# total = first + second
+# total = int(first) + second
 # print(total)
 
 
@@ -897,7 +1020,7 @@ score = "95"
 
 student = "Alex"
 
-# print("student")
+# print(student)
 
 
 
@@ -934,6 +1057,21 @@ student = "Alex"
 # Your program must work for ANY user.
 #
 # You may ONLY use concepts from slides 1–60.
+# rip
+
+fn_us = input("enter first name: ")
+ln_us = input("enter last name: ")
+by = int(input("enter birth year: "))
+fv_n = float(input("enter favorite number: "))
+fln = fn_us + " " + ln_us
+apxa = 2026 - by
+mfnapxar = fv_n * apxa
+print("heh full name " + fln)
+print(apxa)
+print(mfnapxar)
+
+# did i doed it?
+# bruh
 
 
 
