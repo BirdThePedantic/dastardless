@@ -115,6 +115,14 @@ else:
     t_stat = "you have a ticket, cool"
     # redundant but ok ^^^
 
+vip_status = "NON"
+# rip extra credit stuff
+# it doesn't really check vip
+def check_vip(pt, pm, oldg):
+    if (pt and pm) or (pt and oldg >= 65):
+        vip_status = "VIP"
+    # actually it doesn't really need to combine AND and OR. but sure, here's your bone
+
 # print final report
 # man, multi-line print format statements are the way to go, TEACH IT!
 # please?
@@ -129,6 +137,7 @@ ${admission_price} ticket cost after discount
 {guest_ride_lv} riding level
 {supervision_level} to be in the park
 {t_stat}
+oh yeah by the way your vip status is {vip_status}
 """)
 # if statement
 # HA! it's actually not that funny
