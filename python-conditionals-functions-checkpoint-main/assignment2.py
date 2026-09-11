@@ -1,5 +1,5 @@
-# Name:
-# Period:
+# Name: Sanjay Tirumalai
+# Period: 4?
 
 # ============================================================
 # Python Skills Check — Slides 61–116
@@ -37,47 +37,56 @@
 # TASK 1:
 # Create:
 #
-# number_one = 25
-# number_two = 40
+number_one = 25
+number_two = 40
 #
 # Write an if statement that prints:
 #
 # number_two is greater
 #
 # ONLY if number_two is greater than number_one.
-
+if number_one < number_two:
+    pass
+# done haha
 
 # TASK 2:
 # Create:
 #
-# score = 80
+score = 80
 #
 # Print:
 # Passing score
 #
 # if score is GREATER THAN OR EQUAL TO 70.
+if score >= 70:
+    print("passing score\n\nman i always forget that python doesn't need semicolons at the end of everything\ni'm still going to put them there though");
+
 
 
 # TASK 3:
 # Create:
 #
-# lives = 0
+lives = 0
 #
 # Print:
 # Game over
 #
 # ONLY if lives is exactly 0.
+if lives == 0:
+    print("game over\nhaha no capitalization l bozo");
 
 
 # TASK 4:
 # Create:
 #
-# username = "student"
+username = "student"
 #
 # Print:
 # Different username
 #
 # ONLY if username is NOT equal to "admin".
+if username != "admin":
+    print("different username");
 
 
 # ============================================================
@@ -87,7 +96,7 @@
 # TASK 5:
 # Create:
 #
-# age = 18
+age = 18
 #
 # Print:
 # Child       if age is under 13
@@ -99,12 +108,24 @@
 #
 # THINK:
 # Which condition should be checked first?
+strage = "child"
+if age >= 65:
+    strage = 'senior'
+elif age >= 18:
+    strage = 'adult'
+elif age >= 17:
+    strage = 'teen'
+else:
+    pass
+    # haha
+print(strage);
+
 
 
 # TASK 6:
 # Create:
 #
-# grade = 90
+grade = 90
 #
 # Print:
 # A if grade is 90 or higher
@@ -116,12 +137,23 @@
 # IMPORTANT:
 # grade = 90 should print ONLY:
 # A
+sg = "F"
+if grade >= 90:
+    sg = 'A'
+elif grade >= 80:
+    sg = "B"
+elif grade >= 70:
+    sg = 'C'
+elif grade >= 60:
+    sg = 'D'
+print(sg);
 
 
 # TASK 7:
 # Create:
 #
-# temperature = 70
+temperature = 70
+
 #
 # Print:
 # Cold       if below 50
@@ -130,12 +162,20 @@
 # Hot        if 90 or higher
 #
 # Be careful with 50, 70, and 90.
+t = "cold"
+if temperature >= 90:
+    t = 'hot'
+elif temperature >= 70:
+    t = 'warm'
+elif temperature >= 50:
+    t = 'mild'
+print(t);
 
 
 # TASK 8:
 # Create:
 #
-# speed = 65
+speed = 65
 #
 # Print:
 # Too Slow       if speed is below 25
@@ -145,12 +185,20 @@
 #
 # The value 65 must print:
 # Normal
-
-
+# naw im good
+dsp = 'too slow'
+if speed >= 80:
+    dsp = 'reckless'
+elif speed >= 66:
+    dsp = 'speeding'
+elif speed >= 25:
+    dsp = 'normal'
+print(dsp);
+    
 # TASK 9:
 # Create:
 #
-# amount = 100
+amount = 100
 #
 # Print:
 # Small purchase       if amount is below 25
@@ -159,8 +207,19 @@
 # Huge purchase        if amount is 500 or more
 #
 # THINK carefully about your comparison operators.
-
-
+amt = 'small'
+amt2 = 'purchase'
+if amount >= 500:
+    amt = 'huge'
+elif amount >= 100:
+    amt = 'large'
+elif amount >= 25:
+    amt = 'medium'
+print(amt, amt2)
+    
+# man i hate python
+true = True
+false = False
 # ============================================================
 # SECTION 3 — AND / OR THINKING
 # ============================================================
@@ -168,8 +227,8 @@
 # TASK 10:
 # Create:
 #
-# age = 16
-# has_ticket = True
+age = 16
+has_ticket = True
 #
 # Print:
 # You may enter
@@ -178,12 +237,14 @@
 #
 # Otherwise print:
 # Entry denied
+print('you may enter') if age >= 13 and has_ticket else print("entry denied")
+# man python ternary operators
 
 
 # TASK 11:
 # Create:
 #
-# temperature = 91
+temperature = 91
 #
 # Print:
 # Extreme temperature
@@ -192,13 +253,14 @@
 #
 # Otherwise print:
 # Normal temperature
+print("extreme temperature") if temperature > 90 or temperature < 32 else print("normal temperature")
 
 
 # TASK 12:
 # Create:
 #
-# username = "admin"
-# password = "python123"
+username = "admin"
+password = "python123"
 #
 # Print:
 # Access granted
@@ -207,13 +269,17 @@
 #
 # Otherwise print:
 # Access denied
-
+acs = "denied"
+acs2 = 'access'
+if username == "admin" and password == 'python123':
+    acs = 'granted'
+print(acs2, acs);
 
 # TASK 13:
 # Create:
 #
-# age = 70
-# has_membership = False
+age = 70
+has_membership = False
 #
 # Print:
 # Discount applies
@@ -222,12 +288,13 @@
 #
 # Otherwise print:
 # No discount
+print("discount applies") if age >= 65 or has_membership else print("no discount l bozo")
 
 
 # TASK 14:
 # Create:
 #
-# number = 25
+number = 25
 #
 # Print:
 # In range
@@ -236,12 +303,13 @@
 #
 # Otherwise print:
 # Out of range
+print("in range") if number >= 10 and number <= 30 else print("out of range")
 
 
 # TASK 15:
 # Create:
 #
-# number = 10
+number = 10
 #
 # Print:
 # Outside middle range
@@ -255,6 +323,7 @@
 # 10
 # 50
 # 90
+print("outside middle range") if number < 20 or number > 80 else print("inside middle range")
 
 
 # ============================================================
@@ -264,9 +333,9 @@
 # TASK 16:
 # Create:
 #
-# a = 12
-# b = 7
-# c = 19
+a = 12
+b = 7
+c = 19
 #
 # WITHOUT using max(), determine which variable contains
 # the HIGHEST value.
@@ -278,13 +347,23 @@
 # OR
 # c is highest
 
+# i put the comments in backwards, look at find lowest loop and swap out lowest for highest ig
+currenthilol = -2**1024
+m = ''
+stuff = {'a':a,'b':b, 'c':c}
+for bruh in stuff:
+    if stuff[bruh] > currenthilol:
+        currenthilol = stuff[bruh]
+        m = bruh
+print(m, "is highest")
+# dude idk man
 
 # TASK 17:
 # Create:
 #
-# x = 44
-# y = 13
-# z = 28
+x = 44
+y = 13
+z = 28
 #
 # WITHOUT using min(), determine which variable contains
 # the LOWEST value.
@@ -292,13 +371,24 @@
 # Print the correct variable name followed by:
 # is lowest
 
+# current low is high number
+currentlolol = 2**1024
+# dictionary?
+stuff = {'x':x,'y':y,"z":z}
+# go through stuff, if value at key bruh less than currentlolol update new current low
+for bruh in stuff:
+    if stuff[bruh] < currentlolol:
+        m = bruh
+        currentlolol = stuff[bruh]
+print(m, "is lowest")
+
 
 # TASK 18:
 # Create:
 #
-# num1 = 10
-# num2 = 30
-# num3 = 20
+num1 = 10
+num2 = 30
+num3 = 20
 #
 # WITHOUT using min(), max(), or sorting,
 # determine the MIDDLE value.
@@ -308,14 +398,37 @@
 #
 # HINT:
 # The middle value is not the highest and not the lowest.
+# ok loops might not work here idk
+
+# mean of numbers
+cm = (num1+num2+num3)/3
+# difference from means
+md1 = abs(num1 - cm)
+md2 = abs(num2 - cm)
+md3 = abs(num3 - cm)
+# default to num1
+nsi = num1
+# check if difference of means is smaller than every other number?
+if md3 < md2 and md3 < md1:
+    nsi = num3
+elif md2 < md1 and md2 < md3:
+    nsi = num2
+print(f"middle: {nsi}")
+
+
+
+
+
+    
+
 
 
 # TASK 19:
 # Create:
 #
-# first = 20
-# second = 20
-# third = 8
+first = 20
+second = 20
+third = 8
 #
 # Determine what is highest.
 #
@@ -330,13 +443,33 @@
 # second and third are tied for highest
 # all three are tied
 
+# smol hi
+currenthilol = -2**1024
+# states of current highness
+tis = {"first ":false,"second ":false,'third ':false}
+# if etc > etc2, etc.
+if first >= second and first >= third:
+    tis['first '] = true
+if second >= first and second >= third:
+    tis['second '] = true
+if third >= first and third >= second:
+    tis['third '] = true
+# print the ones that are hi
+print("highest:")
+for bruh in tis:
+    if tis[bruh]:
+        print(bruh)
+# this is good enough man
+
+
+
 
 # TASK 20:
 # Create:
 #
-# first = 5
-# second = 5
-# third = 5
+first = 5
+second = 5
+third = 5
 #
 # Determine whether:
 #
@@ -351,14 +484,24 @@
 # All different
 #
 # Your code should still work if the values are changed.
+# a = b = c, a = c
+# a != b != c, a != c, etc. i think
+# then if the other thing happens
+if first == second == third:
+    print("all equal")
+elif first != second and first != third and second != third:
+    print("all different")
+else:
+    print("exactly 2 equal or i screwed something up")
+    
 
 
 # TASK 21:
 # Create:
 #
-# a = 9
-# b = 4
-# c = 9
+a = 9
+b = 4
+c = 9
 #
 # Determine whether AT LEAST TWO numbers match.
 #
@@ -367,14 +510,20 @@
 #
 # Otherwise print:
 # No match
+if a == b or a == c:
+    print("a match exists")
+elif b == c:
+    print("a match exists")
+else:
+    print("no match")
 
 
 # TASK 22:
 # Create:
 #
-# a = 14
-# b = 7
-# c = 20
+a = 14
+b = 7
+c = 20
 #
 # Determine whether a is BETWEEN b and c.
 #
@@ -388,14 +537,20 @@
 #
 # IMPORTANT:
 # Your code should still work if b is greater than c.
+if (a < c and a > b):
+    print("a is between b and c")
+elif a < b and a > c:
+    print("a is between b and c")
+else:
+    print("a is not between b and c")
 
 
 # TASK 23:
 # Create:
 #
-# a = 50
-# b = 20
-# c = 80
+a = 50
+b = 20
+c = 80
 #
 # Determine whether b is the lowest AND c is the highest.
 #
@@ -405,6 +560,39 @@
 # Otherwise print:
 # Different order
 
+if c > b and c > a:
+    pass
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 
 # ============================================================
 # SECTION 5 — USER INPUT LOGIC
