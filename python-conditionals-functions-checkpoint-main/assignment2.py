@@ -62,7 +62,6 @@ if score >= 70:
     print("passing score\n\nman i always forget that python doesn't need semicolons at the end of everything\ni'm still going to put them there though");
 
 
-
 # TASK 3:
 # Create:
 #
@@ -484,6 +483,7 @@ third = 5
 # All different
 #
 # Your code should still work if the values are changed.
+
 # a = b = c, a = c
 # a != b != c, a != c, etc. i think
 # then if the other thing happens
@@ -510,6 +510,9 @@ c = 9
 #
 # Otherwise print:
 # No match
+
+# a matchy matchy with a
+# then check if b=c rsm
 if a == b or a == c:
     print("a match exists")
 elif b == c:
@@ -522,7 +525,7 @@ else:
 # Create:
 #
 a = 14
-b = 7
+b = 17
 c = 20
 #
 # Determine whether a is BETWEEN b and c.
@@ -537,8 +540,11 @@ c = 20
 #
 # IMPORTANT:
 # Your code should still work if b is greater than c.
+
+# i think b < a < c
 if (a < c and a > b):
     print("a is between b and c")
+# c < a < b
 elif a < b and a > c:
     print("a is between b and c")
 else:
@@ -560,39 +566,19 @@ c = 80
 # Otherwise print:
 # Different order
 
+# c > b, a
+# then b < c, a
+# etc.
+# can't you read this?
 if c > b and c > a:
-    pass
-"""
+    if b < c and b < a:
+        print("correct order")
+    else:
+        print("different order")
+else:
+    print("different order")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
+# i think
 
 # ============================================================
 # SECTION 5 — USER INPUT LOGIC
@@ -609,6 +595,26 @@ if c > b and c > a:
 #
 # WITHOUT using min() or max(), print the LOWEST number.
 
+# large upper bound?
+lost = 2**1024
+# the input
+number_string = input("enter 3 whole numbers separated by spaces: ")
+# turn it into x, y, z, etc. etc.
+numbers = number_string.split()
+# yes
+first_number = int(numbers[0])
+second_number = int(numbers[1])
+third_number = int(numbers[2])
+# continuous updation?
+if first_number < lost:
+    lost = first_number
+if second_number < lost:
+    lost = second_number
+if third_number < lost:
+    lost = third_number
+print(lost)
+
+
 
 # TASK 25:
 # Ask the user for THREE whole numbers.
@@ -621,6 +627,21 @@ if c > b and c > a:
 #
 # WITHOUT using min() or max(), print the HIGHEST number.
 
+# same thing but reversed kinda
+lost = -2**1024
+number_string = input("enter 3 whole numbers separated by spaces: ")
+numbers = number_string.split()
+value1 = int(numbers[0])
+value2 = int(numbers[1])
+value3 = int(numbers[2])
+if value1 > lost:
+    lost = value1
+if value2 > lost:
+    lost = value2
+if value3 > lost:
+    lost = value3
+print(lost)
+
 
 # TASK 26:
 # Ask the user for THREE whole numbers.
@@ -632,8 +653,20 @@ if c > b and c > a:
 # n3
 #
 # Determine whether the user entered them in STRICTLY increasing order.
-#
-# Example:
+
+# shorthand for shorthanded shorthand probably but not really
+numbers = input("enter 3 whole numbers separated by spaces: ").split()
+n1 = int(numbers[0]); n2 = int(numbers[1]);  n3 = int(numbers[2])
+if n2 > n1:
+    if n3 > n2:
+        print("increasing")
+    else:
+        print("not increasing")
+else:
+    print("not increasing")
+# n3 > n1 right?
+
+# Example: 3 4 5
 # 3, 8, 10 -> Increasing
 #
 # 3, 3, 10 -> NOT Increasing
@@ -660,6 +693,16 @@ if c > b and c > a:
 # OR
 # Not decreasing
 
+numbers = input("enter 3 whole numbers separated by spaces: ").split()
+n1 = int(numbers[0]); n2 = int(numbers[1]);  n3 = int(numbers[2])
+if n1 < n2:
+    if n2 < n3:
+        print("decreasing")
+    else:
+        print("not decreasing")
+else:
+    print("not decreasing")
+
 
 # TASK 28:
 # Ask the user for THREE whole numbers.
@@ -679,6 +722,12 @@ if c > b and c > a:
 #
 # All different
 # if none match
+numbers = input("enter 3 whole numbers separated by spaces: ").split()
+a = int(numbers[0]); b = int(numbers[1]);  c = int(numbers[2])
+if a == b == c:
+    print("all same")
+elif (a == b or a == c) or (c == b):
+    print("2 same")
 
 
 # TASK 29:
@@ -698,6 +747,20 @@ if c > b and c > a:
 #
 # THINK:
 # You should not assign a letter grade to an invalid score.
+lg = 'F'
+user_score = int(input("enter score from 0 to 100: "))
+if user_score < 0 or user_score > 100:
+    print("invalid score")
+else:
+    if user_score >= 90:
+        lg = 'a'
+    elif user_score >= 80:
+        lg = 'b'
+    elif user_score >= 70:
+        lg = 'c'
+    elif user_score >= 60:
+        lg = 'd'
+    print(lg.upper())
 
 
 # ============================================================
@@ -713,6 +776,8 @@ if c > b and c > a:
 # Hello!
 #
 # Call it once.
+def say_hello():
+    print("Hello!")
 
 
 # TASK 31:
@@ -729,6 +794,12 @@ if c > b and c > a:
 #
 # Call it THREE times using different names.
 
+def greet_student(name):
+    print(f"Hello {name}")
+greet_student("john")
+greet_student("jon")
+greet_student("chicken of the sea")
+
 
 # TASK 32:
 # Create a function named:
@@ -744,9 +815,12 @@ if c > b and c > a:
 # Print the sum of all three.
 #
 # Call it at least TWO times.
-
-
-# ============================================================
+def add_three(a, b, c):
+    print(a+b+c)
+add_three(1, 2, 3)
+add_three(0, 0, 0)
+# =======================================
+# =====================
 # SECTION 7 — FUNCTIONS + CONDITIONALS
 # ============================================================
 
@@ -769,6 +843,18 @@ if c > b and c > a:
 # 10
 # -5
 # 0
+def check_number(number):
+    if number < 0:
+        print("negative")
+    elif number > 0:
+        print("positive")
+    elif number == 0:
+        print("zero")
+    else:
+        print("how did you manage to screw up your own function?")
+check_number(10)
+check_number(-5)
+check_number(0)
 
 
 # TASK 34:
@@ -786,6 +872,15 @@ if c > b and c > a:
 # Odd
 #
 # Test it at least FOUR times.
+def check_even_odd(number):
+    if number % 2 == 0:
+        print("even")
+    else:
+        print("odd")
+check_even_odd(1)
+check_even_odd(2)
+check_even_odd(3)
+check_even_odd(2**1024)
 
 
 # TASK 35:
@@ -817,6 +912,21 @@ if c > b and c > a:
 # 18
 # 64
 # 65
+def ticket_type(age):
+    ag = 'child'
+    if age >= 65:
+        ag = 'senior'
+    elif age >= 18:
+        ag = 'adult'
+    elif age >= 13:
+        ag = 'teen'
+    print(ag)
+ticket_type(12)
+ticket_type(13)
+ticket_type(17)
+ticket_type(18)
+ticket_type(64)
+ticket_type(65)
 
 
 # TASK 36:
@@ -837,6 +947,19 @@ if c > b and c > a:
 # find_highest(100, 25, 60)
 # find_highest(8, 9, 30)
 
+def find_highest(aa, bb, cc):
+    hist = -2**1024
+    if aa > hist:
+        hist = aa
+    if bb > hist:
+        hist = bb
+    if cc > hist:
+        hist = cc
+    print(hist)
+
+find_highest(5, 20, 11)
+find_highest(100, 25, 60)
+find_highest(8, 9, 30)
 
 # TASK 37:
 # Create a function named:
@@ -852,7 +975,20 @@ if c > b and c > a:
 # WITHOUT using min(), print the lowest value.
 #
 # Test at least THREE times.
+def find_lowest(a, b, c):
+    lost = 2**1024
+    if a < lost:
+        lost = a
+    if b < lost:
+        lost = b
+    if c < lost:
+        lost = c
+    print(lost)
 
+# you should teach us about min and max now, i'm getting annoyed
+find_lowest(999, 99, 3)
+find_lowest(-123, 2, 2)
+find_lowest(5**1024, 123, 3213123)
 
 # TASK 38:
 # Create a function named:
@@ -872,6 +1008,25 @@ if c > b and c > a:
 # find_middle(10, 30, 20)
 # find_middle(100, 5, 50)
 # find_middle(7, 9, 8)
+
+# wait what do you mean by middle
+# print(b)
+# function's over lol
+def find_middle(a, b, c):
+    if (a > b and a < c) or (a > c and a < b):
+        print(a)
+    elif (b > c and b < a) or (b > a and b < c):
+        print(b)
+    elif (c > a and c < b) or (c > b and c < a):
+        print(c)
+    else:
+        print(a)
+    # this is badly done but it works man shshshsh
+
+find_middle(10, 30, 20)
+find_middle(100, 5, 50)
+find_middle(7, 9, 8)
+
 
 
 # TASK 39:
@@ -893,7 +1048,17 @@ if c > b and c > a:
 #
 # Test all three situations.
 
+def compare_three(a, b, c):
+    if a == b == c:
+        print("all equal")
+    elif a != b and a != c and b != c:
+        print("all different")
+    else:
+        print("2 equal")
 
+compare_three(1, 1, 1)
+compare_three(1, 1, 2)
+compare_three(1, 2, 0)
 # TASK 40:
 # Create a function named:
 #
@@ -922,6 +1087,24 @@ if c > b and c > a:
 #
 # should still print:
 # In range
+def is_in_range(number, low, high):
+    if low < high:
+        if number <= high and number >= low:
+            print("in range")
+        else:
+            print("out of range")
+    elif low > high:
+        if high <= number <= low:
+            print("in range")
+        else:
+            print("out of range")
+    else:
+        print("no")
+
+# uh did you tell me to use the function?
+# you just gave me an example, it's like telling me here's an apple and not telling me what to do with the apple
+# cmon man!
+
 
 
 # ============================================================
@@ -947,6 +1130,11 @@ if c > b and c > a:
 # multiplication_result
 #
 # Print multiplication_result.
+def multiply_numbers(num1, num2):
+    return num1*num2
+multiplication_result = multiply_numbers(6, 7)
+# you do realize we don't have to reinvent the wheel right?
+print(multiplication_result)
 
 
 # TASK 42:
@@ -970,6 +1158,16 @@ if c > b and c > a:
 # bigger
 #
 # Print bigger.
+def larger_number(a, b):
+    if a > b:
+        return a
+    if b > a:
+        return b
+    else:
+        return (a+b)/2
+
+bigger = larger_number(15, 40)
+print(bigger)
 
 
 # TASK 43:
@@ -993,6 +1191,19 @@ if c > b and c > a:
 #
 # Print highest_result.
 
+# dude you've made us do this like 3 times already BRO!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+def highest_of_three(a, b, c):
+    hist = -2**1024
+    if a > hist:
+        hist = a
+    if b > hist:
+        hist = b
+    if c > hist:
+        hist = c
+    return hist
+highest_result = highest_of_three(18, 42, 27)
+print(highest_result)
+# i swear bruh i actually js copied the find_highest stuff
 
 # TASK 44:
 # Create a function named:
@@ -1008,7 +1219,19 @@ if c > b and c > a:
 # WITHOUT using min(), RETURN the lowest value.
 #
 # Test it at least THREE times.
-
+def lowest_of_three(a, b, c):
+    lost = 2**1024
+    if a < lost:
+        lost = a
+    if b < lost:
+        lost = b
+    if c < lost:
+        lost = c
+    return lost
+# im bout to TWEAK
+print(lowest_of_three(0, 1, 3))
+print(lowest_of_three(0, 21, 3))
+print(lowest_of_three(3, 1, 3123))
 
 # TASK 45:
 # Create a function named:
@@ -1026,9 +1249,20 @@ if c > b and c > a:
 # Do NOT use min(), max(), or sorting.
 #
 # Test:
-# middle_of_three(10, 30, 20)
-# middle_of_three(50, 5, 25)
-# middle_of_three(8, 7, 9)
+def middle_of_three(a, b, c):
+    if (a > b and a < c) or (a > c and a < b):
+        return a
+    elif (b > c and b < a) or (b > a and b < c):
+        return b
+    elif (c > a and c < b) or (c > b and c < a):
+        return c
+    else:
+        return a
+    # RAH
+
+middle_of_three(10, 30, 20)
+middle_of_three(50, 5, 25)
+middle_of_three(8, 7, 9)
 
 
 # ============================================================
@@ -1070,13 +1304,26 @@ if c > b and c > a:
 # IMPORTANT:
 # Do NOT repeat the highest/lowest logic outside the functions.
 
+# you have actually got to be kidding me.
+# oh wait you didn't say don't use min max or sort this is a gift from GOD i mean EVOLUTION
+
+def get_highest(a, b, c):
+    return max([a, b, c])
+highest = get_highest(30, 10, 20)
+def get_lowest(a, b, c):
+    return min([a, b, c])
+lowest = get_lowest(30, 10, 20)
+difference = highest - lowest
+# wdym dont repeat logic?
+print(difference)
+
 
 # TASK 47:
 # Create:
 #
-# a = 9
-# b = 4
-# c = 15
+a = 9
+b = 4
+c = 15
 #
 # Use your get_highest() and get_lowest() functions from above.
 #
@@ -1090,6 +1337,9 @@ if c > b and c > a:
 #
 # or:
 # Small spread
+bigboy = get_highest(a, b, c)
+smallboy = get_lowest(a, b, c)
+print("large spread") if bigboy - smallboy > 10 else print("small spread")
 
 
 # TASK 48:
@@ -1105,9 +1355,9 @@ if c > b and c > a:
 # You should call best_of_two() more than once.
 #
 # Use:
-# a = 12
-# b = 50
-# c = 31
+a = 12
+b = 50
+c = 31
 #
 # Store the final answer in:
 #
@@ -1117,6 +1367,11 @@ if c > b and c > a:
 #
 # THINK:
 # How can one function call feed into another?
+def best_of_two(a, b):
+    return max(a, b)
+highest = best_of_two(best_of_two(a, b,c))
+print(highest)
+
 
 
 # TASK 49:
@@ -1128,15 +1383,20 @@ if c > b and c > a:
 #
 # Use it more than once to find the LOWEST of:
 #
-# a = 22
-# b = 5
-# c = 17
+a = 22
+b = 5
+c = 17
 #
 # Store the final result in:
 #
 # lowest
 #
 # Print lowest.
+def worst_of_two(ar, br):
+    return min(ar, br)
+lowest = worst_of_two(c,worst_of_two(a, b))
+print(lowest)
+
 
 
 # ============================================================
@@ -1146,9 +1406,9 @@ if c > b and c > a:
 # TASK 50:
 # Create:
 #
-# a = 12
-# b = 7
-# c = 19
+a = 12
+b = 7
+c = 19
 #
 # Determine whether b is the MIDDLE value.
 #
@@ -1159,14 +1419,15 @@ if c > b and c > a:
 # b is not middle
 #
 # Do NOT calculate the middle value separately first.
+print("b is middle") if (b < a and b > c) or (b < c and b > a) else print("b is not middle")
 
 
 # TASK 51:
 # Create:
 #
-# a = 25
-# b = 25
-# c = 10
+a = 25
+b = 25
+c = 10
 #
 # Determine whether the HIGHEST value appears more than once.
 #
@@ -1175,14 +1436,21 @@ if c > b and c > a:
 #
 # or:
 # Highest is unique
+i = [a, b, c]
+m = i.pop(i.index(max(i)))
+if (m == i[0] or m == i[1]):
+    print("highest is tied")
+else:
+    print("highest is unique")
+
 
 
 # TASK 52:
 # Create:
 #
-# a = 3
-# b = 8
-# c = 5
+a = 3
+b = 8
+c = 5
 #
 # Determine whether the numbers are:
 #
@@ -1191,14 +1459,23 @@ if c > b and c > a:
 # Neither
 #
 # Print ONE result.
+z = [a, b, c]
+i = sorted(z)
+d = sorted(z, reverse=True)
+if z[0] == z[1] == z[2] or (i[2] == i[1]) or (i[0] == i[1]):
+    print("neither")
+elif z == i:
+    print("strictly increasing")
+elif d == z:
+    print("strictly decreasing")
 
 
 # TASK 53:
 # Create:
 #
-# a = 5
-# b = 5
-# c = 10
+a = 5
+b = 5
+c = 10
 #
 # Determine whether the values are in NON-DECREASING order.
 #
@@ -1213,6 +1490,13 @@ if c > b and c > a:
 # Non-decreasing
 # OR
 # Not non-decreasing
+# decreasing?
+z = [a, b, c]
+h = sorted(z)
+if z == h:
+    print("non decreasing")
+else:
+    print("not non-decreasing")
 
 
 # TASK 54:
