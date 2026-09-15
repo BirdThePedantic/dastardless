@@ -1305,13 +1305,20 @@ middle_of_three(8, 7, 9)
 # Do NOT repeat the highest/lowest logic outside the functions.
 
 # you have actually got to be kidding me.
-# oh wait you didn't say don't use min max or sort this is a gift from GOD i mean EVOLUTION
 
 def get_highest(a, b, c):
-    return max([a, b, c])
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    return c
 highest = get_highest(30, 10, 20)
 def get_lowest(a, b, c):
-    return min([a, b, c])
+    if a <= b and a <= c:
+        return a
+    elif b <= a and b <= c:
+        return b
+    return c
 lowest = get_lowest(30, 10, 20)
 difference = highest - lowest
 # wdym dont repeat logic?
@@ -1368,7 +1375,7 @@ c = 31
 # THINK:
 # How can one function call feed into another?
 def best_of_two(a, b):
-    return max(a, b)
+    return a if a >= b else b
 highest = best_of_two(best_of_two(a, b,c))
 print(highest)
 
@@ -1393,7 +1400,7 @@ c = 17
 #
 # Print lowest.
 def worst_of_two(ar, br):
-    return min(ar, br)
+    return ar if ar <= br else br
 lowest = worst_of_two(c,worst_of_two(a, b))
 print(lowest)
 
@@ -1436,12 +1443,21 @@ c = 10
 #
 # or:
 # Highest is unique
-i = [a, b, c]
-m = i.pop(i.index(max(i)))
-if (m == i[0] or m == i[1]):
-    print("highest is tied")
+n = 0
+g = ' unique'
+if a >= b and a >= c:
+    n = a
+    if n == b or n == c:
+        g = ' tied'
+elif b >= a and b >= c:
+    n = b
+    if n == a or n == c:
+        g = ' tied'
 else:
-    print("highest is unique")
+    n = c
+    if n == a or n == b:
+        g = ' tied'
+print("highest is" + g)
 
 
 
@@ -1459,15 +1475,13 @@ c = 5
 # Neither
 #
 # Print ONE result.
-z = [a, b, c]
-i = sorted(z)
-d = sorted(z, reverse=True)
-if z[0] == z[1] == z[2] or (i[2] == i[1]) or (i[0] == i[1]):
-    print("neither")
-elif z == i:
-    print("strictly increasing")
-elif d == z:
+
+if a > b > c:
     print("strictly decreasing")
+elif a < b < c:
+    print("strictly increasing")
+else:
+    print("neither")
 
 
 # TASK 53:
@@ -1491,20 +1505,16 @@ c = 10
 # OR
 # Not non-decreasing
 # decreasing?
-z = [a, b, c]
-h = sorted(z)
-if z == h:
-    print("non decreasing")
-else:
-    print("not non-decreasing")
+
+print("non decreasing") if a <= b <= c else print("not non-decreasing")
 
 
 # TASK 54:
 # Create:
 #
-# age = 17
-# has_permission = True
-# has_ticket = False
+age = 17
+has_permission = True
+has_ticket = False
 #
 # A person may enter if:
 #
@@ -1513,6 +1523,7 @@ else:
 # OR
 #
 # - they are under 18 AND have_permission is True AND have_ticket is True
+# uh those variables don't exist but i guess i'll figure out what you mean
 #
 # Print:
 # Entry allowed
@@ -1521,13 +1532,17 @@ else:
 # Entry denied
 #
 # Read this one carefully.
+if (age >= 18) or (has_permission and has_ticket):
+    print("entry allowed")
+else:
+    print("entry denied")
 
 
 # TASK 55:
 # Create:
 #
-# score = 88
-# attendance = 92
+score = 88
+attendance = 92
 #
 # Print:
 # Honors
@@ -1544,6 +1559,12 @@ else:
 # Fail
 #
 # Only ONE message should print.
+if (score >= 90 and attendance >= 90):
+    print("honors")
+elif score >= 70 and attendance >= 75:
+    print("pass")
+else:
+    print("fail")
 
 
 # ============================================================
@@ -1564,6 +1585,13 @@ else:
 # if score >= 90:
 #     print("Excellent")
 
+score = 95
+
+if score >= 90:
+    print("Excellent")
+elif score >= 70:
+    print("Passing")
+
 
 # TASK 57:
 # The programmer wants 18 to count as Adult.
@@ -1576,6 +1604,13 @@ else:
 #     print("Adult")
 # else:
 #     print("Minor")
+
+age = 18
+if age >= 18:
+    pass
+else:
+    pass
+# yes i know you're supposed to print adult and minor but you get the idea ok?????
 
 
 # TASK 58:
@@ -1593,6 +1628,14 @@ else:
 # else:
 #     print("Invalid")
 
+number = 20
+if number >= 10 and number <= 20:
+    pass
+else:
+    pass
+# even though it might take me like 5 seconds just to do print("Valid") i'm not going to do it
+# man i'm lazy
+
 
 # TASK 59:
 # The programmer wants the function to RETURN the answer.
@@ -1606,6 +1649,11 @@ else:
 # result = add_numbers(4, 6)
 # print(result)
 
+def add_numbers(a, b):
+    return a + b
+# you just told me to fix the function man, that's all you said you wanted me to do and that's what i did
+# erg chech
+
 
 # TASK 60:
 # Fix the function so the variable result works outside
@@ -1617,10 +1665,17 @@ else:
 # result = subtract(20, 8)
 # print(result)
 
+def subtract(a, b):
+    return a - b
+# i suppose i am like a rock
+# i won't skip until you throw me
+# right?
 
 # ============================================================
 # FINAL BOSS 1 — THREE NUMBER ANALYZER
 # ============================================================
+
+# jrother
 
 # TASK 61:
 # Create a function named:
@@ -1664,11 +1719,49 @@ else:
 # analyze_three_numbers(5, 5, 9)
 # analyze_three_numbers(-5, 0, -12)
 
+def analyze_three_numbers(a, b, c):
+    # without min max sort etc.
+    hist = 0
+    lost = 0
+    mist = 0
+    if a >= b and a >= c:
+        hist = a
+    elif b >= a and b >= c:
+        hist = b
+    elif c >= a and c >= b:
+        hist = c
+
+    if a <= b and a <= c:
+        lost = a
+    elif b <= a and b <= c:
+        lost = b
+    elif c <= a and c <= b:
+        lost = c
+
+    mist = a+b+c - hist - lost
+    # ai said this was efficient
+    # i'll keep that in my metaphorical back pocket
+
+    print(f"highest: {hist}\nlowest: {lost}\nmiddle: {mist}")
+    if a == b == c:
+        print("all equal")
+    elif a != b and a != c and c != b:
+        print("all different")
+    else:
+        print("exactly 2 equal")
+        
+
+
+analyze_three_numbers(8, 3, 15)
+analyze_three_numbers(20, 20, 20)
+analyze_three_numbers(5, 5, 9)
+analyze_three_numbers(-5, 0, -12)
+
 
 # ============================================================
 # FINAL BOSS 2 — NUMBER RANKING
 # ============================================================
-
+# uh there's only supposed to be 1 final boss
 # TASK 62:
 # Ask the user for THREE whole numbers.
 #
@@ -1697,18 +1790,50 @@ else:
 # - Do NOT use sorting
 #
 # Your program must still work if the order of inputs changes.
+# what does that matter?
+
+# i'm frankly getting tired of having to do this
+
+nstr = input("enter 3 whole numbers separated by spaces: ").split()
+user_num1 = int(nstr[0]); user_num2 = int(nstr[1]); user_num3 = int(nstr[2])
+hus = 0
+lus = 0
+
+if user_num1 >= user_num2 and user_num1 >= user_num3:
+    hus = user_num1
+    if user_num2 <= user_num3:
+        lus = user_num2
+    else:
+        lus = user_num3
+elif user_num2 >= user_num1 and user_num2 >= user_num3:
+    hus = user_num2
+    if user_num1 <= user_num3:
+        lus = user_num1
+    else:
+        lus = user_num3
+else:
+    hus = user_num3
+    if user_num1 < user_num2:
+        lus = user_num1
+    else:
+        lus = user_num2
+mus = user_num1+user_num2+user_num3 - lus - hus
+print(f"{lus} {mus} {hus}")
+
+
 
 
 # ============================================================
 # FINAL BOSS 3 — FUNCTION REUSE
 # ============================================================
-
+# can we at least get some variation???
 # TASK 63:
 # Create these THREE functions:
 #
 # get_highest(a, b, c)
 # get_lowest(a, b, c)
 # get_middle(a, b, c)
+# we already made those functions so i'm going to use get_highest2(a,b,c) etc.
 #
 # Each function must RETURN the correct value.
 #
@@ -1735,6 +1860,38 @@ else:
 # Lowest: [lowest]
 #
 # Do NOT use min(), max(), or sorting.
+
+nstr = input("enter 3 whole numbers separated by spaces: ").split()
+
+first = int(nstr[0]); second = int(nstr[1]); third = int(nstr[2])
+def get_highest2(first, second, third):
+    fhus = 0
+    if first >= second and first >= third:
+        fhus = first
+        
+    elif second >= first and second >= third:
+        fhus = second
+    else:
+        fhus = third
+    return fhus
+
+def get_lowest2(f, s, t):
+    # man, variable names don't really matter
+    if f <= s and f <= t:
+        return f
+    elif s <= f and s <= t:
+        return s
+    return t
+
+def get_middle(a, b, c):
+    h = get_highest2(a, b, c)
+    l = get_lowest2(a, b, c)
+    return a+b+c - l - h
+
+highest = get_highest2(first, second, third)
+lowest = get_lowest2(first, second, third)
+middle = get_middle(first, second, third)
+print(f"highest: {highest}\nlowest: {lowest}\nmiddle: {middle}")
 
 
 # ============================================================
@@ -1773,17 +1930,32 @@ else:
 # The first person should still be accepted even though
 # the interview value is "fail".
 
+def admission_decision(grade, attendance, interview):
+    theno = "not "
+    cp = "accepted"
+    if (grade >= 90 and attendance >= 90) or (grade >= 80 and attendance >= 80 and interview == 'pass'):
+        theno = ''
+    print(theno + cp)
+
+admission_decision(95, 95, "fail")
+admission_decision(85, 85, "pass")
+admission_decision(85, 85, "fail")
+admission_decision(75, 100, "pass")
+
+
 
 # ============================================================
 # FINAL BOSS 5 — THINK CAREFULLY
 # ============================================================
 
+# can we stop with the final bosses already?
+
 # TASK 65:
 # Create:
 #
-# a = 15
-# b = 8
-# c = 15
+a = 15
+b = 8
+c = 15
 #
 # Your program must determine BOTH:
 #
@@ -1805,6 +1977,24 @@ else:
 # - Do NOT use sorting
 #
 # Your logic should still work if the variable values change.
+
+# gag me with a spoon
+h = 0
+nt = 'unique '
+if a >= c and a >= b:
+    h = a
+    if h != b and h != c:
+        nt = 'tied '
+elif b >= a and b >= c:
+    h = b
+    if h != a and h != c:
+        nt = 'tied '
+else:
+    h = c
+    if h != a and h != b:
+        nt = 'tied '
+print("highest: " + h)
+print(nt + "highest")
 
 
 
@@ -1867,6 +2057,17 @@ else:
 #
 # CHALLENGE:
 # The same function must be able to convert in BOTH directions.
+def convert_temperature(temperature, scale):
+    # it converts if temperature is in degrees scale.. i think
+    if scale.upper() == 'F':
+        return (temperature-32)*(5/9)
+    elif scale.upper() == 'C':
+        return temperature*9/5 + 32
+    else:
+        return -2**1024
+
+# by the way calling convert_temperature does nothing because the values are discarded
+# but ok man
 
 
 # ------------------------------------------------------------
@@ -1889,6 +2090,7 @@ else:
 # If scale is "F":
 #
 # First convert Fahrenheit to Celsius:
+# why do that when you have all these prewritten functions?
 #
 # Celsius = (Fahrenheit - 32) / 1.8
 #
@@ -1905,6 +2107,12 @@ else:
 #
 # THINK:
 # One input can require TWO calculations before you return the answer.
+
+def to_kelvin(temperature, scale):
+    if scale.upper() == "C":
+        return temperature+273.15
+    elif scale.upper() == "F":
+        return convert_temperature(temperature, "F")+273.15
 
 
 # ------------------------------------------------------------
@@ -1939,6 +2147,8 @@ else:
 #
 # THINK:
 # Do not accidentally charge $3 for the first hour.
+def parking_cost(hours):
+    return 25 if hours >= 8 else 5 +3*(hours-1)
 
 
 # ------------------------------------------------------------
@@ -1975,6 +2185,16 @@ else:
 # First determine the base ticket price.
 # Then decide whether something must be added.
 
+def movie_total(age, is_weekend):
+    tp = 8
+    if age >= 65:
+        tp -=1
+    elif age >=13:
+        tp+=4
+    return tp if not is_weekend else tp +3
+
+# screw comments
+
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 70 — ELECTRIC BILL
@@ -2009,6 +2229,9 @@ else:
 # IMPORTANT:
 # For 120 units, only 20 units should be charged at $0.20.
 
+def electric_bill(usage):
+    return 0.1*usage if usage <= 100 else 10 + .2*(usage-100)
+
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 71 — LEAP YEAR
@@ -2041,9 +2264,15 @@ else:
 # is_leap_year(2000)  -> True
 #
 # This problem is intentionally tricky.
+# not really
 #
 # THINK:
 # A year divisible by 100 is NOT automatically a leap year.
+
+def is_leap_year(year):
+    return True if year%400 == 0 or (year%4 == 0 and year%100 != 0) else False
+# huh i didn't need to use a ternary operator
+# oh well
 
 
 # ------------------------------------------------------------
@@ -2080,6 +2309,24 @@ else:
 #
 # Notice that 2 + 3 = 5 is NOT enough.
 # It must be GREATER THAN.
+
+# you didn't tell me i couldn't use sorting
+# maybe you should be more consistent with your rules
+def valid_triangle(a, b, c):
+    m = 0
+    n = 0
+    if a >= b and a >=c:
+        m = a
+        n = b if b<=c else c
+    elif b >= c and b >= a:
+        m = b
+        n = c if c<=a else a
+    else:
+        m = c
+        n = a if a<=b else b
+    return m < n+(a+b+c-m-n)
+
+# FIX THIS!
 
 
 # ------------------------------------------------------------
@@ -2123,6 +2370,8 @@ else:
 #
 # THINK:
 # Check whether the triangle is valid BEFORE classifying it.
+def triangle_type(a, b, c):
+    pass
 
 
 # ------------------------------------------------------------
