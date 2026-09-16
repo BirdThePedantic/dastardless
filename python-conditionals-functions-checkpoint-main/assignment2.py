@@ -1376,7 +1376,7 @@ c = 31
 # How can one function call feed into another?
 def best_of_two(a, b):
     return a if a >= b else b
-highest = best_of_two(best_of_two(a, b,c))
+highest = best_of_two(best_of_two(a, b),c)
 print(highest)
 
 
@@ -1993,7 +1993,7 @@ else:
     h = c
     if h != a and h != b:
         nt = 'tied '
-print("highest: " + h)
+print("highest: " + str(h))
 print(nt + "highest")
 
 
@@ -2371,7 +2371,14 @@ def valid_triangle(a, b, c):
 # THINK:
 # Check whether the triangle is valid BEFORE classifying it.
 def triangle_type(a, b, c):
-    pass
+    if not valid_triangle(a, b, c):
+        return "invalid"
+    if a == b == c:
+        return "equilateral"
+    elif a != b != c and a != c:
+        return "scalene"
+    return "isosceles"
+
 
 
 # ------------------------------------------------------------
@@ -2428,6 +2435,14 @@ def triangle_type(a, b, c):
 # This is a logic problem.
 # There are several possible combinations.
 
+def rps_winner(player1, player2):
+    if player1==player2:
+        return "tie"
+    winr = "player1"
+    if (player1=='rock' and player2=='paper') or (player1=='paper' and player2=='scissors') or player1=='scissors' and player2 == 'rock':
+        winr = 'player2'
+    return winr
+
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 75 — CLOSEST TO 100
@@ -2460,6 +2475,14 @@ def triangle_type(a, b, c):
 # THINK:
 # A number may be above OR below 100.
 # You will need to determine each number's distance from 100.
+
+import math
+def closest_to_100(a, b):
+    if int(math.sqrt((a-100)**2)) == int(math.sqrt((b-100)**2)):
+        return -1
+    return b if int(math.sqrt((a-100)**2)) > int(math.sqrt((b-100)**2)) else a
+# inefficient city
+    
 
 
 # ------------------------------------------------------------
@@ -2496,6 +2519,11 @@ def triangle_type(a, b, c):
 # THINK:
 # A large order does NOT always mean free delivery.
 
+def delivery_fee(order_total, distance):
+    if order_total >= 50 and distance <= 5:
+        return 0
+    return 5 if distance <=5 else 10
+
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 77 — ATM WITHDRAWAL
@@ -2527,6 +2555,9 @@ def triangle_type(a, b, c):
 # can_withdraw(500, 0)    -> False
 #
 # ALL conditions must be true.
+
+def can_withdraw(balance, amount):
+    return amount >0 and amount <=balance and amount%20 == 0
 
 
 # ------------------------------------------------------------
@@ -2567,6 +2598,13 @@ def triangle_type(a, b, c):
 # THINK:
 # RETURN only the TIP, not the final bill.
 
+def tip_amount(bill, service):
+    tm = .1
+    if service =='good':
+        tm+=.08
+    elif service == 'excellent':
+        tm += .15
+    return bill*tm
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 79 — PHONE BATTERY WARNING
@@ -2605,6 +2643,17 @@ def triangle_type(a, b, c):
 # THINK:
 # The order of the conditions matters.
 
+def battery_status(battery, is_charging):
+    if is_charging:
+        return 'charging'
+    elif battery <= 5:
+        return 'critical'
+    elif battery <=20:
+        return 'low'
+    else:
+        return 'normal'
+
+
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 80 — TAXI FARE
@@ -2636,6 +2685,9 @@ def triangle_type(a, b, c):
 #
 # Build the final answer from the rules instead of
 # hard-coding different totals.
+
+def taxi_fare(miles, is_night):
+    return 4+2*miles + (5 if is_night else 0)
 
 
 # ------------------------------------------------------------
@@ -2671,6 +2723,9 @@ def triangle_type(a, b, c):
 #
 # THINK:
 # The critical hit should happen AFTER defense is removed.
+
+def calculate_damage(attack, defense, critical):
+    return (attack - defense if attack-defense >= 0 else 0)*(2 if critical else 1)
 
 
 # ------------------------------------------------------------
@@ -2709,6 +2764,11 @@ def triangle_type(a, b, c):
 #
 # THINK:
 # A 25% discount means the customer pays 75% of the price.
+def final_price(price, coupon):
+    if coupon == 'SAVE25':
+        return price*.75
+    return price*.9 if coupon=='SAVE10' else price
+# hey man, if it's none it doesn't apply a discount. same with NONE or None or nOne or noNe or nonE or NOne or NONe or NOnE or well you get the idea
 
 
 # ============================================================
@@ -2721,6 +2781,7 @@ def triangle_type(a, b, c):
 # 2. Run your ENTIRE program.
 # 3. Fix all errors.
 # 4. Make sure you can explain your code.
+# read it brother
 #
 # Then use:
 #
@@ -2728,3 +2789,6 @@ def triangle_type(a, b, c):
 # git add .
 # git commit -m "Complete conditionals and functions challenge"
 # git push
+
+#FINALLY also im not going to put a very substantial message rip
+
