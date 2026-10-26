@@ -7,7 +7,7 @@ def n():
 def deny():
     print("naur")
     
-fastford=True
+fastford=False
 
 
 # ============================================================
